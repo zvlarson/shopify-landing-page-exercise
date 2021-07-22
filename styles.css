@@ -1,3 +1,4 @@
+/* normalize or reset css */
 *,
 *::after,
 *::before {
@@ -6,10 +7,11 @@
   box-sizing: inherit;
 }
 
+/* site variables here */
 :root {
-    --purple: rgb(81, 95,188);
-    --gray-light: #8e99a1;
-    --blue-dark: #1e262f;
+  --purple: #515fbc;
+  --gray-light: #8e99a1;
+  --blue-dark: #1e262f;
 }
 
 body {
@@ -17,38 +19,220 @@ body {
   text-align: center;
 }
 
-
-
-section{
-    border: 2px yellow solid;
+li {
+  list-style-type: none;
 }
 
-footer{
-    border: 2px blue solid;
+section {
+  /* border: 2px yellow solid; */
 }
-/*========HEADER=========*/
-header{
-    border: 2px purple solid;
-    background-color: rgb(81, 95, 188);
-    height: 70px;
+
+/* =========== HEADER ===========*/
+header {
+  background-color: #515fbc;
+  height: 70px;
+}
+
+.logo > img {
+  width: 80px;
+  margin: 30px 0;
+}
+
+/* =========== HERO ===========*/
+
+#section-hero {
+  background-color: var(--purple);
+  color: white;
+  padding-bottom: 10px;
+}
+
+#section-hero small {
+  font-size: 9px;
+  font-weight: 100;
+}
+
+h1 {
+  font-weight: 500;
+  padding: 10px 0;
+}
+
+h3 {
+  font-weight: 300;
+  margin-bottom: 10px;
 }
 
 
-.logo>img{
-    width: 80px;
-    margin: 30px 0;
+
+  @media only screen and (max-width: 600px) {
+    h3 {
+      display: none;
+    }
+  }
+
+.form-cta {
+  margin-bottom: 10px;
 }
-/*========HERO=========*/
+
+.form-cta input {
+  border: 1px solid var(--gray-light);
+  border-radius: 3px;
+  width: 200px;
+  padding: 7px;
+}
+
+.form-cta button {
+  color: white;
+  background-color: var(--blue-dark);
+  padding: 7px;
+  border-radius: 3px;
+  border: 1px solid var(--blue-dark);
+  font-size: 12px;
+}
+
+/* =========== SECTION MIDDLE IMAGE ===========*/
+
+#section-middle-image {
+  background: var(--purple);
+  /* padding: 5% 0; */
+}
+
+#section-middle-image img {
+  width: 60%;
+  z-index: 2;
+  /* position: absolute; */
+  text-align: center;
+}
+
+.wave {
+  /* padding: 200px; */
+  text-align: center;
+}
 
 
-#section-hero{
-    background-color: var(--purple);
-    color: white;
+/*========== wave not complete ========*/
+
+.pattern {
+  height: 300px;
+  position: relative;
+  background-color: var(--purple);
+  background-image: linear-gradient(
+    315deg,
+    var(--purple) 0%,
+    var(--purple) 74%
+  );
 }
 
-h1{
-    font-weight: 500;
+.pattern:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 320px;
+  background: url(https://media.geeksforgeeks.org/wp-content/uploads/20200326181026/wave3.png);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
-h3{
-    font-weight: 300;
+
+@media only screen and (max-width: 600px) {
+  .pattern{
+    height: 100px;
+  }
+
+  .pattern:before {
+    height: 100px;
+  }
+}
+
+/* =========== SECTION ARTICLES ===========*/
+
+#section-articles {
+  display: flex;
+  width: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+  #section-articles {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+article {
+  padding: 40px;
+}
+
+@media only screen and (max-width: 600px) {
+  article {
+    padding: 3%;
+    max-width: 70%;
+  }
+}
+
+article h4 {
+  font-size: 12px;
+}
+
+article p {
+  color: var(--gray-light);
+  padding: 12px 0;
+}
+
+hr {
+  width: 500px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.btn-custom {
+  padding: 10px 20px;
+  margin: 3rem 0;
+  background-color: var(--purple);
+  border: none;
+}
+
+.btn-custom:hover {
+  background-color: var(--gray-light);
+}
+
+/* ========== SECTION CLIENTS ============*/
+
+#section-clients img {
+  width: 80px;
+  margin: 2rem 4px;
+}
+
+/* ========== TESTIMONIALS ============*/
+#section-testimonials {
+  margin-top: 3rem;
+}
+
+span {
+  text-transform: uppercase;
+}
+
+@media only screen and (max-width: 600px) {
+  #section-testimonials {
+    font-size: 10px;
+  }
+
+  #section-testimonials h4 {
+    font-size: 14px;
+  }
+
+}
+
+/* ========== FOOTER STYLES ============*/
+
+footer {
+  /* border: 2px blue solid; */
+}
+
+/* footer ul {
+  display: flex;
+} */
+
+footer ul li {
+  color: var(--purple);
+  font-size: 10px;
 }
